@@ -1,0 +1,22 @@
+backend: pgf
+
+pgf.texsystem: pdflatex
+pgf.rcfonts: False
+
+font.family: serif
+font.size: 9
+
+ytick.major.pad: 0
+
+legend.fontsize: x-small
+
+figure.constrained_layout.use: True
+figure.constrained_layout.h_pad: 0
+figure.constrained_layout.w_pad: 0
+figure.constrained_layout.hspace: 0
+figure.constrained_layout.wspace: 0
+
+savefig.bbox: tight
+savefig.pad_inches: 0.02
+
+text.usetex: True
