@@ -102,15 +102,3 @@ class ACMFigure:
     @staticmethod
     def pt2in(pt):
         return constants.point / constants.inch * pt
-
-class OneColumnFigure(ACMFigure):
-    _width = 241.14749
-
-    def __init__(self, size=None, ratio=None, plot_kw=None):
-        super().__init__(self._width, size, ratio, plot_kw)
-
-class TwoColumnFigure(ACMFigure):
-    _width = 506.295
-
-    def __init__(self, size=None, ratio=None, plot_kw=None):
-        super().__init__(self._width, size, ratio, plot_kw)
