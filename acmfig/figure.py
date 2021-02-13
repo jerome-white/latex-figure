@@ -10,8 +10,7 @@ from .ratio import MatplotlibRatio
 
 __all__ = [
     'PlotSize',
-    'OneColumnFigure',
-    'TwoColumnFigure',
+    'ACMFigure',
 ]
 
 PlotSize = cl.namedtuple('PlotSize', 'row, col')
