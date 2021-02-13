@@ -1,7 +1,7 @@
 # ACM Figure
 
 A library that manages plot formatting when building figures in
-Matplotlib specifically for the ACM template.
+Matplotlib to be presented in documents using ACM Latex templates.
 
 ## Usage
 
@@ -13,7 +13,7 @@ $> export MATPLOTLIBRC=`pwd`
 $> export PYTHONPATH=`pwd`
 ```
 
-The include the module. For example:
+Then include the module. For example:
 ```python
 from acmfig import OneColumnFigure
 ```
