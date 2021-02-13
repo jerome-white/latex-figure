@@ -2,6 +2,7 @@ backend: pgf
 
 pgf.texsystem: pdflatex
 pgf.rcfonts: False
+pgf.preamble: \usepackage[utf8]{inputenc}\DeclareUnicodeCharacter{2212}{-}
 
 font.family: serif
 font.size: 9
