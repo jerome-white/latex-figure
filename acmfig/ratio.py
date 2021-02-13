@@ -1,28 +1,29 @@
 import math
 import operator as op
+import functools as ft
+
+from scipy import constants
 
 __all__ = [
-    'OneColumnFigure',
-    'TwoColumnFigure',
+    'GoldenRatio',
+    'MatplotlibRatio',
 ]
 
 class PlotRatio:
-    def __init__(self, width=1, height=1):
-        self.width = width
-        self.height = height
+    def __init__(self, wscale, hscale, ratio):
+        self.wscale = wscale
+        self.hscale = hscale
+        self.ratio = ratio
 
-    def __mul__(self, other):
-        w = self.width * other
-        h = self.height * float(self)
+    def __call__(self, width):
+        w = self.wscale * width
+        h = w * self.ratio * self.hscale
 
-        return w * h
-
-    def __float__(self):
-        raise NotImplementedError()
+        return (w, h)
 
 class GoldenRatio(PlotRatio):
-    def __float__(self):
-        return (1 + math.sqrt(5)) / 2
+    def __init__(self, wscale=1, hscale=1):
+        super().__init__(wscale, hscale, constants.golden)
 
 class MatplotlibRatio(PlotRatio):
     _default = (
@@ -30,5 +31,6 @@ class MatplotlibRatio(PlotRatio):
         4.8, # height
     )
 
-    def __float__(self):
-        return op.truediv(*self._default)
+    def __init__(self, wscale=1, hscale=1):
+        wh_ratio = op.truediv(*self._default)
+        super().__init__(wscale, hscale, wh_ratio)
