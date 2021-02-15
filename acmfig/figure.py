@@ -6,7 +6,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import constants
 
-import .measurement as M
 from .ratio import MatplotlibRatio
 
 __all__ = [
@@ -16,6 +15,15 @@ __all__ = [
     'ConferenceColumnFigure',
 ]
 
+#
+# Measurements
+#
+SIGCONF_COLUMNWIDTH = 241.14749
+SIGCONF_TEXTWIDTH = 506.295
+
+#
+#
+#
 PlotSize = cl.namedtuple('PlotSize', 'row, col')
 Panel = cl.namedtuple('Panel', 'pos, ax')
 
@@ -111,7 +119,7 @@ class ConferenceColumnFigure(ACMFigure):
                  ratio=None,
                  gridspec_kw=None,
                  subplot_kw=None):
-        super().__init__(M.SIGCONF_COLUMNWIDTH,
+        super().__init__(SIGCONF_COLUMNWIDTH,
                          size,
                          ratio,
                          gridspec_kw,
@@ -123,7 +131,7 @@ class ConferencePageFigure(ACMFigure):
                  ratio=None,
                  gridspec_kw=None,
                  subplot_kw=None):
-        super().__init__(M.SIGCONF_TEXTWIDTH,
+        super().__init__(SIGCONF_TEXTWIDTH,
                          size,
                          ratio,
                          gridspec_kw,
