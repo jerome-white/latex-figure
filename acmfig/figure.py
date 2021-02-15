@@ -6,11 +6,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import constants
 
+import .measurement as M
 from .ratio import MatplotlibRatio
 
 __all__ = [
     'PlotSize',
     'ACMFigure',
+    'ConferencePage',
+    'ConferenceColumn',
 ]
 
 PlotSize = cl.namedtuple('PlotSize', 'row, col')
@@ -101,3 +104,27 @@ class ACMFigure:
     @staticmethod
     def pt2in(pt):
         return constants.point / constants.inch * pt
+
+class ConferenceColumn(ACMFigure):
+    def __init__(self,
+                 size=None,
+                 ratio=None,
+                 gridspec_kw=None,
+                 subplot_kw=None):
+        super().__init__(M.SIGCONF_COLUMNWIDTH,
+                         size,
+                         ratio,
+                         gridspec_kw,
+                         subplot_kw)
+
+class ConferencePage(ACMFigure):
+    def __init__(self,
+                 size=None,
+                 ratio=None,
+                 gridspec_kw=None,
+                 subplot_kw=None):
+        super().__init__(M.SIGCONF_TEXTWIDTH,
+                         size,
+                         ratio,
+                         gridspec_kw,
+                         subplot_kw)
