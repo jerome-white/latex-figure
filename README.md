@@ -9,13 +9,13 @@ Download and setup the environment:
 ```bash
 $> git clone https://github.com/jerome-white/acm-figure
 $> cd acm-figure
-$> export MATPLOTLIBRC=`pwd`
+$> export MATPLOTLIBRC=`pwd`/matplotlibrc/pgf.rc
 $> export PYTHONPATH=`pwd`
 ```
 
 Then include the module. For example:
 ```python
-from acmfig import OneColumnFigure
+from acmfig import ConferenceColumnFigure
 ```
 
 ## Issues
