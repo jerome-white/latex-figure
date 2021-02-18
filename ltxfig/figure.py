@@ -10,16 +10,8 @@ from .ratio import MatplotlibRatio
 
 __all__ = [
     'PlotSize',
-    'ACMFigure',
-    'ConferencePageFigure',
-    'ConferenceColumnFigure',
+    'LatexFigure',
 ]
-
-#
-# Measurements
-#
-SIGCONF_COLUMNWIDTH = 241.14749
-SIGCONF_TEXTWIDTH = 506.295
 
 #
 #
@@ -55,7 +47,7 @@ class GridspecLayoutStrategy(LayoutStrategy):
 #
 #
 #
-class ACMFigure:
+class LatexFigure:
     def __init__(self,
                  width,
                  size=None,
@@ -112,27 +104,3 @@ class ACMFigure:
     @staticmethod
     def pt2in(pt):
         return constants.point / constants.inch * pt
-
-class ConferenceColumnFigure(ACMFigure):
-    def __init__(self,
-                 size=None,
-                 ratio=None,
-                 gridspec_kw=None,
-                 subplot_kw=None):
-        super().__init__(SIGCONF_COLUMNWIDTH,
-                         size,
-                         ratio,
-                         gridspec_kw,
-                         subplot_kw)
-
-class ConferencePageFigure(ACMFigure):
-    def __init__(self,
-                 size=None,
-                 ratio=None,
-                 gridspec_kw=None,
-                 subplot_kw=None):
-        super().__init__(SIGCONF_TEXTWIDTH,
-                         size,
-                         ratio,
-                         gridspec_kw,
-                         subplot_kw)
