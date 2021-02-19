@@ -17,7 +17,7 @@ class PlotRatio:
 
     def __call__(self, width):
         w = self.wscale * width
-        h = w * self.ratio * self.hscale
+        h = w / self.ratio * self.hscale
 
         return (w, h)
 
