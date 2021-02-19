@@ -23,11 +23,11 @@ Panel = cl.namedtuple('Panel', 'pos, ax')
 #
 #
 class LayoutStrategy:
-    def __call__(self, width, size, ratio, gridspec_kw, subplot_kw):
+    def __call__(self, width, size, figsize, gridspec_kw, subplot_kw):
         raise NotImplementedError()
 
 class SubplotLayoutStrategy(LayoutStrategy):
-    def __call__(self, width, size, figsize, plot_kw):
+    def __call__(self, width, size, figsize, gridspec_kw, subplot_kw):
         (fig, axes) = plt.subplots(nrows=size.row,
                                    ncols=size.col,
                                    squeeze=False,

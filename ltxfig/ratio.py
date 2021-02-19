@@ -1,6 +1,4 @@
-import math
 import operator as op
-import functools as ft
 
 from scipy import constants
 
