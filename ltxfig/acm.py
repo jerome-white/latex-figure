@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 from .figure import LatexFigure
 
 __all__ = [
@@ -14,7 +16,12 @@ SIGCONF_TEXTWIDTH   = 506.295
 #
 #
 #
-class ConferenceColumnFigure(LatexFigure):
+class SigConfFigure(LatexFigure):
+    def __init__(self, width, size, ratio, gridspec_kw, subplot_kw):
+        super().__init__(width, size, ratio, gridspec_kw, subplot_kw)
+        plt.rc('font', size=9)
+
+class ConferenceColumnFigure(SigConfFigure):
     def __init__(self,
                  size=None,
                  ratio=None,
@@ -26,7 +33,7 @@ class ConferenceColumnFigure(LatexFigure):
                          gridspec_kw,
                          subplot_kw)
 
-class ConferencePageFigure(LatexFigure):
+class ConferencePageFigure(SigConfFigure):
     def __init__(self,
                  size=None,
                  ratio=None,
