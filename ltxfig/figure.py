@@ -16,7 +16,7 @@ __all__ = [
 #
 #
 #
-PlotSize = cl.namedtuple('PlotSize', 'row, col')
+PlotSize = cl.namedtuple('PlotSize', 'row, col', defaults=[1,1])
 Panel = cl.namedtuple('Panel', 'pos, ax')
 
 #
@@ -58,7 +58,7 @@ class LatexFigure:
         # handle defaults
         #
         if size is None:
-            size = PlotSize(1, 1)
+            size = PlotSize()
 
         if ratio is None:
             ratio = MatplotlibRatio()
