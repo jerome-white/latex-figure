@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from .figure import LatexFigure
 
 __all__ = [
-    'DataPageFigure',
+    'ConferencePageFigure',
 ]
 
 #
@@ -14,7 +14,7 @@ DATA_TEXTWIDTH = 397.48499
 #
 #
 #
-class DataPageFigure(LatexFigure):
+class ConferencePageFigure(LatexFigure):
     def __init__(self,
                  size=None,
                  ratio=None,
